@@ -102,46 +102,7 @@
                 <h2>Product List</h2>
             </div>
             <div class="row it_works">
-              <?php
-
-                        $link = mysqli_connect('172.20.1.101', 'ecomuser', 'ecompassword', 'ecomdb');
-
-                        if ($link) {
-                        $res = mysqli_query($link, "select * from products;");
-                        while ($row = mysqli_fetch_assoc($res)) { ?>
-
-                <div class="col-md-3 col-sm-6 business_content">
-                    <?php echo '<img src="img/' . $row['ImageUrl'] . '" alt="">' ?>
-                    <div class="media">
-                        <div class="media-left">
-
-                        </div>
-                        <div class="media-body">
-                            <a href="#"><?php echo $row['Name'] ?></a>
-                            <p>Purchase <?php echo $row['Name'] ?> at the lowest price <span><?php echo $row['Price'] ?>$</span></p>
-                        </div>
-                    </div>
-                </div>
-
-                <?php
-                        }
-                    }
-                    else {
-                ?>
-                <div style="width: 100%">
-                <div class="error-content">
-
-                    <h1>Database connection error</h1>
-                    <p>
-                    <?php
-                          echo mysqli_connect_errno() . ":" . mysqli_connect_error();
-                    ?>
-                    </p>
-                  </div>
-                  </div>
-                  <?php
-                    }
-                  ?>
+             
 
 
             </div>
